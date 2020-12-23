@@ -34,7 +34,7 @@ void (*get_func(char **tok_text, unsigned int line))(stack_t **, unsigned int)
 				(tok_text[1] == NULL || (!(valid(tok_text[1])))))
 			{
 				free(tok_text);
-				printf("L%d: usage: push integer\n", line);
+				dprintf(STDERR_FILENO, "L%d: usage: push integer\n", line);
 				exit(EXIT_FAILURE);
 			}
 			else if ((strcmp(ops[iter].opcode, "push") == 0))
@@ -44,7 +44,7 @@ void (*get_func(char **tok_text, unsigned int line))(stack_t **, unsigned int)
 		}
 		iter++;
 	}
-	printf("L%d: unknown instruction %s\n", line, tok_text[0]);
+	dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n", line, tok_text[0]);
 	free(tok_text);
 	exit(EXIT_FAILURE);
 }

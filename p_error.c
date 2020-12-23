@@ -17,7 +17,6 @@ void error(unsigned int line, int op)
 		dprintf(STDERR_FILENO, "L%d: can't swap, stack too short\n", line);
 	else if (op == 5)
 		dprintf(STDERR_FILENO, "L%d: can't add, stack too short\n", line);
-	else if (op == 6)
 	exit(EXIT_FAILURE);
 }
 
