@@ -108,5 +108,5 @@ void swap(stack_t **stack, unsigned int line)
 	point->prev = NULL;
 	point->next = *stack;
 	*stack = point;
-	free(stack);
+	own_free(stack);
 }
