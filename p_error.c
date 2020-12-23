@@ -1,10 +1,9 @@
 #include "monty.h"
-
 /**
- *
- *
- *
- *
+ * error - Print error.
+ * @line: Line where the error is.
+ * @op: Number of the error to print.
+ * Return: Noo return.
  */
 void error(int line, int op)
 {

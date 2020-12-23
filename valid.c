@@ -29,7 +29,7 @@ int valid(char *token)
 		else
 		{
 			iter = 0;
-			while(token[iter] >= '0' && token[iter] <= 9)
+			while (token[iter] >= '0' && token[iter] <= 9)
 			{
 				iter++;
 				if (token[iter] == '\0')

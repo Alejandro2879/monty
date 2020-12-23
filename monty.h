@@ -5,6 +5,9 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <string.h>
+#include <unistd.h>
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -36,22 +39,22 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-//extern variable
 extern int arg;
 
-//prototypes
 void open_file(char *file);
-void (*get_func(char **tok_text, int line))(stack_t **, int li);
+void (*get_func(char **tok_text, unsigned int line))(stack_t **, unsigned int);
 char **tok_line(char *line);
 int valid(char *token);
+void own_free(stack_t **stack);
+void error(int line, int op);
 
-void push(stack_t **stack, int line);
-void pall(stack_t **stack, int line);
-void pop(stack_t **stack, int line);
-void pint(stack_t **stack, int line);
-void swap(stack_t **stack, int line);
-void nop(stack_t **stack, int line);
-void add(stack_t **stack, int line);
+void push(stack_t **stack, unsigned int line);
+void pall(stack_t **stack, unsigned int line);
+void pop(stack_t **stack, unsigned int line);
+void pint(stack_t **stack, unsigned int line);
+void swap(stack_t **stack, unsigned int line);
+void nop(stack_t **stack, unsigned int line);
+void add(stack_t **stack, unsigned int line);
 
 
 
