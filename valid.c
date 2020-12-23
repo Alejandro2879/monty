@@ -6,17 +6,17 @@
  */
 int valid(char *token)
 {
-	int iter = 0;
+	unsigned int iter;
 
-	if (!token)
+	if (token == NULL)
 		return (1);
-
-	while (token[iter])
+	iter = 0;
+	while (token[iter] != '\0')
 	{
 		if (token[0] == '-')
 		{
-			if (!(token[1] >= 0 && token[1] <= 9) || !token[1])
-				return (1);
+			if ((!(token[1] >= '0' && token[1] <= '9')) || token[1] == '\0')
+				return (0);
 			iter = 1;
 			while (token[iter] >= '0' && token[iter] <= '9')
 			{
@@ -29,7 +29,7 @@ int valid(char *token)
 		else
 		{
 			iter = 0;
-			while (token[iter] >= '0' && token[iter] <= 9)
+			while (token[iter] >= '0' && token[iter] <= '9')
 			{
 				iter++;
 				if (token[iter] == '\0')
