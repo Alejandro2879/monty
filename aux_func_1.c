@@ -29,13 +29,13 @@ void (*get_func(char **tok_text, unsigned int line))(stack_t **, unsigned int)
 
 	while (ops[iter].opcode != NULL)
 	{
-		if (strcmp(ops[iter].opcode, tok_text[0]) == 0)
+		if ((strcmp(ops[iter].opcode, tok_text[0]) == 0))
 		{
 			if ((strcmp(ops[iter].opcode, "push") == 0) &&
 				(tok_text[1] == NULL || (!(valid(tok_text[1])))))
 			{
 				free(tok_text);
-				printf("L%d: usage: push integer", line);
+				printf("L%d: usage: push integer\n", line);
 				exit(EXIT_FAILURE);
 			}
 			else if (strcmp(ops[iter].opcode, "push") == 0)

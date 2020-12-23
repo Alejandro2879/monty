@@ -8,7 +8,7 @@
 void error(int line, int op)
 {
 	if (op == 1)
-		printf("L%d: usage: push integer", line);
+		printf("L%d: usage: push integer\n", line);
 	else if (op == 2)
 		printf("L%d: can't pint, stack empty\n", line);
 	else if (op == 3)
