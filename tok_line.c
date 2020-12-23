@@ -14,7 +14,7 @@ char **tok_line(char *line)
 	box_tok = malloc(sizeof(char *) * 3);
 	if (!box_tok)
 	{
-		printf("Error: malloc failed");
+		dprintf(STDERR_FILENO, "Error: malloc failed");
 		exit(EXIT_FAILURE);
 	}
 

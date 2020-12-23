@@ -40,7 +40,6 @@ typedef struct instruction_s
 } instruction_t;
 
 extern int arg;
-
 void open_file(char *file);
 void (*get_func(char **, unsigned int))(stack_t **, unsigned int);
 char **tok_line(char *line);
