@@ -1,12 +1,12 @@
 #include "monty.h"
-
+int arg = 0;
 /**
  * get_func - Call the respective opcode function.
  * @tok_text: Each line in opcode.
  * @line: Respecctive line of the opcode.
  * Return: No return.
  */
-int arg = 0;
+
 void (*get_func(char **tok_text, unsigned int line))(stack_t **, unsigned int)
 {
 	instruction_t ops[] = {
