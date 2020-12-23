@@ -10,12 +10,12 @@ int main(int argc, char *argv[])
 {
 	char *file;
 
+	file = argv[1];
 	if (argc != 2)
 	{
 		printf("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	file = argv[1];
 	open_file(file);
 	return (0);
 }
@@ -34,9 +34,9 @@ void open_file(char *file)
 	stack_t *stack = NULL;
 
 	open_f = fopen(file, "r");
-	if (!open_f)
+	if (open_f == NULL)
 	{
-		printf("Error: Can't open file %s", file);
+		printf("Error: Can't open file %s\n", file);
 		exit(EXIT_FAILURE);
 	}
 
@@ -44,7 +44,7 @@ void open_file(char *file)
 	{
 		line++;
 		tok_text = tok_line(buffer);
-		if (!tok_text)
+		if (tok_text == NULL)
 			continue;
 		else
 			get_func(tok_text, line)(&stack, line);

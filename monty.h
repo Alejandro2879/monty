@@ -42,11 +42,11 @@ typedef struct instruction_s
 extern int arg;
 
 void open_file(char *file);
-void (*get_func(char **tok_text, unsigned int line))(stack_t **, unsigned int);
+void (*get_func(char **, unsigned int))(stack_t **, unsigned int);
 char **tok_line(char *line);
 int valid(char *token);
 void own_free(stack_t **stack);
-void error(int line, int op);
+void error(unsigned int line, int op);
 
 void push(stack_t **stack, unsigned int line);
 void pall(stack_t **stack, unsigned int line);

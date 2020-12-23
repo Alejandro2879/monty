@@ -9,8 +9,6 @@
 int arg = 0;
 void (*get_func(char **tok_text, unsigned int line))(stack_t **, unsigned int)
 {
-	unsigned int iter = 0;
-
 	instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},
@@ -20,6 +18,7 @@ void (*get_func(char **tok_text, unsigned int line))(stack_t **, unsigned int)
 		{"nop", nop},
 		{NULL, NULL}
 	};
+	unsigned int iter = 0;
 
 	if (tok_text[0][0] == '#')
 	{
@@ -38,7 +37,7 @@ void (*get_func(char **tok_text, unsigned int line))(stack_t **, unsigned int)
 				printf("L%d: usage: push integer\n", line);
 				exit(EXIT_FAILURE);
 			}
-			else if (strcmp(ops[iter].opcode, "push") == 0)
+			else if ((strcmp(ops[iter].opcode, "push") == 0))
 				arg = atoi(tok_text[1]);
 			free(tok_text);
 			return (ops[iter].f);

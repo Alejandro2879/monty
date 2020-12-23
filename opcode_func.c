@@ -12,9 +12,9 @@ void push(stack_t **stack, unsigned int line)
 
 	(void) line;
 	node = malloc(sizeof(stack_t));
-	if (!node)
+	if (node == NULL)
 	{
-		printf("Error: malloc failed");
+		printf("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	node->n = arg;
@@ -60,7 +60,7 @@ void pop(stack_t **stack, unsigned int line)
 {
 	stack_t *point;
 
-	if (!*stack)
+	if (*stack == NULL)
 		error(line, 3);
 	if ((*stack)->next == NULL)
 	{

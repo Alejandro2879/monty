@@ -20,10 +20,12 @@ void nop(stack_t **stack, unsigned int line)
  */
 void add(stack_t **stack, unsigned int line)
 {
-	stack_t *point = *stack;
+	stack_t *point;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		error(line, 5);
+
+	point = *stack;
 	if (point->next == NULL)
 		error(line, 5);
 	point->next->n += (*stack)->n;
